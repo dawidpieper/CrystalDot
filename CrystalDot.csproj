@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+<ItemGroup>
+    <ContentWithTargetPath Include="vendor\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>%(RecursiveDir)\%(Filename)%(Extension)</TargetPath>
+    </ContentWithTargetPath>
+</ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="geometry3Sharp" Version="1.0.324" />
+  </ItemGroup>
+
+</Project>
